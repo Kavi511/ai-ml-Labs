@@ -1,70 +1,199 @@
-🧠 AI/ML Workshops Repository
-Purpose
+## AI & Machine Learning Practicals 
 
-A central repository for all AI/ML workshops and practicals — including datasets, notebooks, and reports.
-Each workshop is self-contained, reproducible, and designed for hands-on learning and academic use.
+Central repository for AI/ML workshops and practicals, including datasets, notebooks, scripts, and reports. Each workshop is self‑contained and reproducible.
 
+### Contents
+- **Workshops overview**: Summary of all workshops and learning goals
+- **Repository structure**: Folder layout and conventions
+- **Environment setup**: How to install dependencies
+- **How to run**: Notebooks and scripts
+- **Datasets**: Where data lives and how to download
+- **Results & reports**: Where outputs are saved
+- **Reproducibility**: Seeds and notes
+- **Academic integrity & license**: Usage/limits
 
-Workshops Overview
+---
 
-No.	Workshop Title	Key Topics
-01	Intro to Python & NumPy	Python basics, NumPy arrays, vectorization, plotting with Matplotlib
-02	Data Preprocessing & EDA	Cleaning, missing values, outliers, scaling, visual EDA with Pandas/Seaborn
-03	Supervised Classification	Train/test split, k-NN, Logistic Regression, Decision Trees, baseline vs improved models
-04	Regression Models	Linear & Polynomial Regression, regularization (Ridge/Lasso), error analysis
-05	Model Evaluation Metrics	Accuracy, precision, recall, F1, ROC-AUC, confusion matrix, MAE/MSE/RMSE
-06	Feature Engineering	Encoding, scaling, binning, text/image features, feature importance
-07	Model Tuning & Cross-Validation	Grid/Random search, k-fold CV, pipelines, data leakage prevention
-08	Unsupervised Learning	k-means, hierarchical, DBSCAN, PCA/t-SNE/UMAP for visualization
-09	Neural Networks	MLPs with PyTorch/TensorFlow, activations, loss, optimizers, overfitting control
-10	NLP Basics	Text cleaning, tokenization, TF-IDF, simple classifiers, intro to embeddings
-11	Computer Vision Basics	Image preprocessing, augmentation, CNN fundamentals, transfer learning demo
-12	Time Series Analysis	Stationarity, decomposition, ARIMA/Prophet, ML-based forecasting
+## Workshops Overview
 
-How to Run
-1️⃣ Create Environment
-python -m venv .venv
-.venv\Scripts\activate    # (Windows)
-# source .venv/bin/activate   # (Mac/Linux)
-pip install -r environment/requirements.txt
+- **Workshop 01 — Intro to Python & NumPy**
+  - Python refresher, control flow, functions
+  - NumPy arrays, broadcasting, vectorization
+  - Quick plotting with Matplotlib
 
-2️⃣ Launch Notebooks
-jupyter lab
+- **Workshop 02 — Data Preprocessing & EDA**
+  - Loading with Pandas, data types, summaries
+  - Handling missing values, outliers
+  - Scaling/normalization; visual EDA with Seaborn
 
-3️⃣ Run Scripts (Example)
-python workshops/Workshop-03-Supervised-Classification/train.py
+- **Workshop 03 — Supervised Classification**
+  - Train/validation/test split, baselines
+  - k‑NN, Logistic Regression, Decision Trees
+  - Evaluation with confusion matrix and ROC‑AUC
 
-Datasets
+- **Workshop 04 — Regression Models**
+  - Linear and Polynomial Regression
+  - Regularization: Ridge/Lasso, bias–variance
+  - Error analysis: MAE/MSE/RMSE
 
-Small sample datasets are included in datasets/.
+- **Workshop 05 — Model Evaluation**
+  - Classification metrics: accuracy, precision/recall, F1
+  - ROC/PR curves; threshold tuning
+  - Regression metrics and diagnostic plots
 
-Larger datasets are linked in each workshop’s README with download instructions.
+- **Workshop 06 — Feature Engineering**
+  - Encoding (one‑hot/ordinal), binning, scaling
+  - Text/image feature basics; feature importance
+  - Leakage pitfalls and good practices
 
-Reproducibility
+- **Workshop 07 — Model Tuning & Cross‑Validation**
+  - Pipelines, Grid/Random Search, k‑fold CV
+  - Hyperparameter tuning, early stopping (where applicable)
+  - Tracking experiments and results
 
-Fixed random seeds where applicable.
+- **Workshop 08 — Unsupervised Learning**
+  - k‑means, hierarchical clustering, DBSCAN
+  - Dimensionality reduction: PCA; visualization with t‑SNE/UMAP
 
-Noted any nondeterministic steps (e.g., GPU operations, parallel processing).
+- **Workshop 09 — Neural Networks**
+  - MLP fundamentals (TensorFlow/PyTorch)
+  - Activations, losses, optimizers
+  - Overfitting control: regularization, dropout
 
-Results & Reports
+- **Workshop 10 — NLP Basics**
+  - Text cleaning, tokenization, n‑grams
+  - Bag‑of‑Words/TF‑IDF with simple classifiers
+  - Intro to embeddings
 
-Key metrics, charts, and conclusions are saved under:
+- **Workshop 11 — Computer Vision Basics**
+  - Image preprocessing and augmentation
+  - CNN fundamentals and transfer learning demo
 
+- **Workshop 12 — Time Series**
+  - Stationarity, decomposition, seasonality
+  - ARIMA/Prophet overview; ML forecasting with sliding windows
+
+---
+
+## Repository Structure
+
+```
+workshops/
+  Workshop-01-Intro-to-Python-NumPy/
+  Workshop-02-Data-Preprocessing-EDA/
+  Workshop-03-Supervised-Classification/
+  Workshop-04-Regression-Models/
+  Workshop-05-Model-Evaluation-Metrics/
+  Workshop-06-Feature-Engineering/
+  Workshop-07-Model-Tuning-CV/
+  Workshop-08-Unsupervised-Clustering-DimRed/
+  Workshop-09-Neural-Networks/
+  Workshop-10-NLP-Basics/
+  Workshop-11-Computer-Vision-Basics/
+  Workshop-12-Time-Series/
+datasets/
 reports/
+environment/
+  requirements.txt  (or environment.yml)
+```
 
-Per-workshop output/ folders.
+Conventions:
+- Each workshop may include a top‑level notebook (e.g., `main.ipynb`), a `README.md`, `src/` for scripts, and `outputs/` for generated artifacts.
+- Keep datasets small in‑repo; place large files outside the repo and link instructions to download.
 
-Academic Integrity
+---
 
-This repository is for learning and assessment submission only.
-Cite all external sources properly and do not share restricted coursework materials.
+## Environment Setup (Windows PowerShell)
 
-License
+```bash
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install --upgrade pip
+pip install -r environment/requirements.txt
+```
 
-Choose one of the following:
+Optional (Anaconda/Miniconda):
 
-MIT License — open for reuse and learning.
+```bash
+conda create -n aiml python=3.11 -y
+conda activate aiml
+pip install -r environment/requirements.txt
+```
 
-All Rights Reserved — if required by your course.
+---
 
-✅ Maintained as part of ongoing AI/ML coursework to support learning, reproducibility, and structured skill development.
+## How to Run
+
+Run notebooks:
+
+```bash
+pip install jupyterlab
+jupyter lab
+```
+
+Run a script (example):
+
+```bash
+python workshops/Workshop-03-Supervised-Classification/train.py
+```
+
+Reproduce a workshop from scratch (example flow):
+
+```bash
+cd workshops/Workshop-07-Model-Tuning-CV
+python src/preprocess.py
+python src/train.py --model random_forest --cv 5
+python src/evaluate.py --metrics f1 roc_auc
+```
+
+---
+
+## Datasets
+
+- Small sample datasets are stored in `datasets/`.
+- For larger datasets, each workshop `README.md` provides links and download instructions.
+- If a dataset must not be shared publicly, keep it out of Git (use `.gitignore`) and document the source.
+
+---
+
+## Results and Reports
+
+- Key metrics, charts, and tables are saved under each workshop’s `outputs/` and summarized in `reports/`.
+- When relevant, include a brief discussion of findings and limitations.
+
+---
+
+## Reproducibility
+
+- Fixed random seeds where applicable (NumPy, PyTorch/TensorFlow, scikit‑learn).
+- Note that some operations (e.g., multithreading, GPU kernels) can be nondeterministic.
+- Record exact package versions in `environment/requirements.txt`.
+
+---
+
+## Academic Integrity
+
+- This repository is for learning and assessment submission.
+- Cite all external sources (datasets, code snippets, papers, tutorials) within notebooks or `reports/`.
+- Do not share restricted coursework materials.
+
+---
+
+## License
+
+Choose one appropriate for your course/institution:
+
+- MIT License (permissive)
+- Apache 2.0 (permissive with patent grant)
+- All rights reserved (if required for submissions)
+
+Add the chosen license text at the repository root.
+
+---
+
+## Maintainer
+
+- Name: Kavishka Herath (ID: 2548577)
+- Module: Artificial Intelligence & Machine Learning (3rd Year)
+
+
